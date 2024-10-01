@@ -1,0 +1,116 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #333;
+  padding: 10px 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+}
+
+.burger:hover .line {
+  background-color: #ff9800; 
+}
+
+.burger {
+  display: none; 
+  width: 100%;
+  flex-direction: column;
+  cursor: pointer;
+  margin-right: 20px; 
+}
+
+.line {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 4px 0;
+  transition: background-color 0.3s ease; 
+}
+
+.line.active {
+  background-color: #ff9800; /* Ubah warna saat aktif */
+}
+
+.navLinks {
+  list-style: none;
+  display: flex;
+  width: 80%;
+  justify-content: center;
+  gap: 80px;
+}
+
+.navLink {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  transition: color 0.3s ease;
+}
+
+.navLinks.open {
+  display: flex; /* Tampilkan saat menu dibuka */
+  opacity: 1; 
+  transform: translateY(0); 
+}
+
+.navLink:hover {
+  color: #ff9800;
+}
+
+/* Responsif */
+@media (max-width: 800px) {
+  .navLinks {
+    display: none; 
+    flex-direction: column; /* Ganti menjadi kolom */
+    position: absolute; 
+    top: 35px; /* Sesuaikan jarak dari navbar */
+    gap: 10px;
+    background-color: #333;
+    width: 100%; 
+  }
+
+  .burger {
+    margin-left: 20px;
+  }
+
+  .navLink {
+    font-size: 20px; /* Sesuaikan ukuran font */
+  }
+
+  .navLinks.open {
+    display: flex; /* Tampilkan saat menu dibuka */
+  }
+
+  .burger {
+    display: flex; /* Tampilkan burger di layar kecil */
+  }
+}
+
+/* Style untuk smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Style untuk sections */
+section {
+  padding: 100px 20px;
+  min-height: 100vh;
+}
+
+#hero {
+  background-color: #f4f4f4;
+}
+
+#about {
+  background-color: #eaeaea;
+}
+
+#projects {
+  background-color: #d4d4d4;
+}
+
+#contact {
+  background-color: #c0c0c0;
+}
